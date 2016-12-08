@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin:0;padding:0;box-sizing: border-box;}
+			.box{width:200px;margin:50px auto 0;transform-style: preserve-3d;perspective: 800px;-webkit-transform-style: preserve-3d;-webkit-perspective: 800px;border:1px #c00 solid;text-indent: 30px;}
+			.box h2{font:16px/2 arial;color:#fff;background:#ffc219;position: relative;z-index: 666;}
+			.box div{width: 100%;height:30px;position: absolute;left:0;top:0;top:30px;transform-style: preserve-3d;perspective: 800px;-webkit-transform-style: preserve-3d;-webkit-perspective: 800px;transform-origin: top;transform: rotateX(-90deg);}
+			.box div span{display: block;background:#e32551;color:#fff;font:14px/30px arial;border-top:1px #fff dashed;}
+			.box>div:nth-of-type(1){top:32px;}
+			@keyframes show{
+				0%{transform: rotateX(-120deg);}
+				25%{transform: rotateX(30deg);}
+				50%{transform: rotateX(-15deg);}
+				75%{transform: rotateX(6deg);}
+				100%{transform: rotateX(0deg);}
+			}
+			.show{animation: show 1.8s;animation-fill-mode: forwards;}
+		</style>
+		<script>
+			window.onload=function(){
+				var oDiv=document.getElementById('wrap');
+				var aDiv=oDiv.getElementsByTagName('div');
+				var timer=null;
+				var i=0;
+				/*for(var i=0;i<aDiv.length;i++){
+					aDiv[i].className='show';
+				}*/
+				timer=setInterval(function(){
+					aDiv[i].className='show';
+					i++;
+				
+				},200)
+			}
+		</script>
+	</head>
+	<body>
+		<div class="box" id="wrap">
+			<h2>MAKI</h2>
+			<div>
+				<span>NIGIRI</span>
+				<div>
+					<span>MAGURO</span>
+					<div>
+						<span>SAKE</span>
+						<div>
+							<span>UNAGI</span>
+							<div>
+								<span>BURI</span>
+								<div>
+									<span>SUZUKI</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
